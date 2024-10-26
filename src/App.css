@@ -1,0 +1,88 @@
+/* Couleurs principales */
+:root {
+  --main-bg-color: #f4f4f9; /* Fond blanc cassé, très pâle */
+  --main-text-color: #2c2c34; /* Texte gris foncé pour un ton naturel */
+  --sidebar-bg-color: #e8f5e9; /* Vert très pâle pour la barre latérale */
+  --button-bg-color: #98a4ff; /* Boutons bleu-violet doux */
+  --button-text-color: #ffffff; /* Texte des boutons blanc */
+  --link-color: #5a8a8a; /* Liens bleu-vert */
+  --link-hover-color: #3c6075; /* Liens au survol bleu sombre */
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: Arial, sans-serif;
+}
+
+/* App.css */
+.header {
+  background-color: var(--main-bg-color);
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: var(--link-hover-color);
+  color: var(--main-text-color);
+}
+
+
+.open-btn {
+  font-size: 18px;
+  cursor: pointer;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 15px;
+  margin: 10px 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 5px;
+}
+
+.open-btn:hover {
+  background-color: #7373b9; /* Violet plus foncé au survol */
+}
+
+/* Footer.css */
+
+.footer {
+  display: flex;
+  justify-content: space-around; /* Écartement entre les sections */
+  align-items: center;
+  background-color: var(--main-bg-color); /* Utilise la couleur d'arrière-plan principale */
+  padding: 1rem 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.footer-section {
+  font-weight: bold;
+  color: var(--main-text-color); /* Couleur de texte principale */
+  text-align: center;
+}
+
+

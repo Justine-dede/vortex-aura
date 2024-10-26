@@ -1,0 +1,220 @@
+/* Styles pour le conteneur principal */
+/* Positionnement du header en haut de la page */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #a7aea9;
+  z-index: 10; /* Assure que le header reste au-dessus des autres éléments */
+  padding: 10px;
+  color: white; /* Couleur du texte du header */
+  text-align: center;
+  height: 60px; /* Ajuste la hauteur du header si nécessaire */
+}
+
+/* Ajuster le conteneur du chatbot pour ne pas être caché sous le header */
+.chatbot-container {
+  padding-top: 70px; /* Ajouter de l'espace au-dessus du chatbot pour le header */
+  display: flex;
+  height: calc(100vh - 70px); /* Ajuster la hauteur du chatbot en tenant compte du header */
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Styles pour le chatbot */
+.chatbot {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 99%;
+  max-width: 1500px; /* Ajustez selon vos besoins */
+  height: 100%;
+  /* border: 1px solid rgb(236, 236, 34); */
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  z-index: 0; /* Assurez-vous que le chatbot est au-dessus de la sidebar */
+}
+
+.header {
+  height: 30px;
+  z-index: 0;
+}
+/* Styles pour la sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -200px; /* Commence hors de l'écran */
+  width: 250px;
+  height: 100%;
+  background-color: rgb(240, 238, 240);
+  transition: left 0.3s ease-in-out;
+  z-index: 2; /* Assurez-vous que la sidebar est au-dessus du chatbot */
+}
+
+.sidebar.open {
+  left: 0; /* Déplace la sidebar à l'intérieur de l'écran */
+}
+
+/* Styles pour le bouton d'ouverture de la sidebar */
+.close-open {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 3; /* Assurez-vous que le bouton est toujours visible */
+}
+
+/* Le reste de vos styles restent inchangés */
+
+.message-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 60%;
+}
+
+.message.user {
+  background-color: rgba(227, 234, 247, 0.532);
+  text-align: center;
+  margin-left: auto;
+  color: black;
+  margin-bottom: 10px;
+  margin-right: 22%;
+  padding: 10px;
+  border-radius: 15px;
+  border-top-right-radius: 0px;
+  border-right: solid #053873;
+  width: fit-content;
+  max-width: 55%;
+  min-width: 100px;
+  align-self: flex-start;
+}
+
+.message.bot {
+  background-color: rgba(202, 206, 211, 0.429);
+  /* text-align: center; */
+  color: black;
+  margin-bottom: 10px;
+  margin-left: 21%;
+  padding: 10px;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  border-left: solid #6a0573;
+  width: fit-content;
+  max-width: 47%;
+  align-self: flex-end;
+}
+
+.chat-input {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  max-width: 60%;
+  border-radius: 20px;
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid #ccc; 
+  background-color: rgba(234, 229, 236, 0.84);
+
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 0px;
+  background-color: rgba(234, 229, 236, 0.84);
+  font-size: 16px;
+}
+
+input[type="text"]:hover {
+  flex: 1;
+  padding: 10px;
+  border-top: 1px solid #ccc; 
+  border-radius: 20px;
+  margin-right: 0px;
+  /* background-color: rgba(60, 7, 82, 0.84); */
+  font-size: 16px;
+}
+
+.chat-input button {
+  margin-left: 20px;
+  padding: 6px;
+  padding-top: 8px;
+  background-color: #c1c4c7;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #bcbec2d7;
+  border: 2px solid #333;
+}
+
+
+/* Animation du message d'accueil */
+
+
+          .typing-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 10vh;
+              /* background-color: #f0f0f0; */
+          }
+
+          .typing-effect {
+              width: 0;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+              font-size: 30px;
+              color: #333;
+              white-space: nowrap;
+              overflow: hidden;
+              border-right: 3px solid;
+              animation: 
+                  typing 5s steps(100) forwards,
+                  blink 0.75s step-end infinite,
+                  deleteText 3s steps(100) 7s forwards,
+                  typing 5s steps(100) 10s forwards;
+          }
+
+          @keyframes typing {
+              from { width: 0 }
+              to { width: 600px }
+          }
+
+          @keyframes deleteText {
+              from { width: 600px }
+              to { width: 0 }
+          }
+
+          @keyframes blink {
+              from, to { border-color: #333 }
+              50% { border-color: transparent }
+          }
+
+          /* Style pour une meilleure lisibilité sur mobile */
+          @media (max-width: 600px) {
+              .typing-effect {
+                  font-size: 18px;
+                  padding: 0 20px;
+              }
+          }
+    
+
+.warning {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: smaller;
+}
