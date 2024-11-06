@@ -8,16 +8,24 @@
     /* color: white; */
     border-bottom-left-radius: 20px ;
     border-bottom-right-radius: 20px ;
+    z-index: 0;
   }
   
+  .nav {
+    /* background-color: #345937; */
+    padding-left: 60%;
+    width: 100%;
+    max-width: 90%;
+  }
   
   .nav ul {
     list-style: none;
     display: flex;
     gap: 1rem;
     /* background-color: #a7aea9; */
-    padding-right: 30px;
-    padding-left: 1000px;
+    /* padding-right: 30px; */
+    /* padding-left: 1000px; */
+    /* max-width: 50%; */
   }
   
   .nav ul li {

@@ -11,19 +11,23 @@ import linkedin from './../../images/linkedin.png'
 import logoInfinix from './../../images/logoInfinix.png'
 import logoIpnet from './../../images/logoIpnet.png'
 import logo from './../../images/logo.png'
+import logo5 from '../Authentification/logo.png'
 
 function Accueil() {
 
   return (
      <div className='Accueil'>
       <div className='Body'>
+      <div className="Logo">
+          <img src={logo} alt="logo d'IVAN" />
+        </div>
         <div className='Logo'>
           <ChatWidget/>
-          <h2>
-            INFINIX VIRTUAL ASSITANT NAVIGATOR
-          </h2>
         </div>
         <div className='Text'>
+          <h3>
+            INFINIX VIRTUAL ASSITANT NAVIGATOR
+          </h3>
           <h2>
             Avec IVAN, tout devient plus simple !
           </h2>
@@ -45,8 +49,9 @@ function Accueil() {
         </div>
         
       </div>
-      <div className='Foooter'>
+      <div className='Footer'>
         <Footer />
+        <p className='copyRight'>IVAN pour une révolution à IPNET © Edéda Eunice Zaria. Tous Droits réservés.</p>
       </div>
     </div>
   );
@@ -69,7 +74,7 @@ function Footer() {
       </div>
 
       <div className="footer-section">
-        CONTACT
+        CONTACT 
         <p>E-mail : ivan.chatbotsc@gmail.com </p>
           <p>Contact :  +228 93 81 59 82 
             <br/> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+228 92 63 01 36 
@@ -96,7 +101,6 @@ function Footer() {
       </div>
 
     </footer>
-    <p>IVAN pour une révolution à IPNET © Edéda Eunice Zaria. Tous Droits réservés.</p>
 
       </div>
   );

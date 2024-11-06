@@ -37,7 +37,7 @@ const LoginForm = () => {
       }, 1200);
     } catch (error) {
       console.error('Erreur de connexion :', error.response?.data.detail || error.message); // Afficher l'erreur
-      setErrorMessage('Nom d\'utilisateur ou mot de passe incorrect'); // Mettre à jour le message d'erreur
+      setErrorMessage(<p className='Erreur'>Nom d'utilisateur ou mot de passe incorrect</p>); // Mettre à jour le message d'erreur
     }
 
   };
@@ -75,7 +75,7 @@ const LoginForm = () => {
 
             <button type="submit" className='submitAuth'>Se connecter</button>
           </form>
-          <p>
+          <p className='txt'>
             Pas encore inscrit? <a href="/register">S'inscrire</a>
           </p>
         </div>

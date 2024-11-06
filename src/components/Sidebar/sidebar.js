@@ -9,19 +9,19 @@ const Sidebar = ({ isOpen, toggleSidebar, token, onSelectConversation, onCreateN
   
   const [discussions, setDiscussions] = useState([]);
 
-  const handleLoadConversations = async () => {
-    try {
-      const token = localStorage.getItem('token');
-      const response = await axios.get('http://127.0.0.1:8000/conversations', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      onConversationClick(response.data);
-    } catch (error) {
-      console.error('Erreur lors de la récupération des conversations:', error);
-    }
-  };
+  // const handleLoadConversations = async () => {
+  //   try {
+  //     const token = localStorage.getItem('token');
+  //     const response = await axios.get('http://127.0.0.1:8000/conversations', {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     onConversationClick(response.data);
+  //   } catch (error) {
+  //     console.error('Erreur lors de la récupération des conversations:', error);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchDiscussions = async () => {

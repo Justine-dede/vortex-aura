@@ -5,7 +5,7 @@ header {
   top: 0;
   width: 100%;
   background-color: #a7aea9;
-  z-index: 10; /* Assure que le header reste au-dessus des autres éléments */
+  z-index: 1; /* Assure que le header reste au-dessus des autres éléments */
   padding: 10px;
   color: white; /* Couleur du texte du header */
   text-align: center;
